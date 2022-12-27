@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAXSIZE 10
+#define MAXSIZE 15
 #define MAXSIZE1 8
 void main()
 {
@@ -19,17 +19,16 @@ void main()
 
     for (int i = 0; i <= MAXSIZE1; i++)
     {
-        for (int j = 0; j < MAXSIZE1  - 1 -i; j++) // Pner atencion a este detalle para optimizatr el metodo
+        for (int j = 0; j < MAXSIZE1 +1   ; j++) // Pner atencion a este detalle para optimizatr el metodo
         {
-            if (vector [j][MAXSIZE] > vector [j + 1][MAXSIZE])
+            if (vector [j][0] > vector [j + 1][0])
             {
-                  for (int l = 0; l < MAXSIZE + 3 +i; l++)
+                  for (int l = 0; l < MAXSIZE ; l++)
                   {
                     // acum = vector [j];
                     for (int k = 0; k < MAXSIZE; k++)
                     vector1[k] = vector[j][k];
-
-                    // vector [l] = vector [j+1];
+                // vector [l] = vector [j+1];
                     for (int k = 0; k < MAXSIZE; k++)
                     vector [j][k] = vector [j + 1][k];
 
@@ -45,9 +44,4 @@ printf("\n");
     {
         printf("\t%s\t", vector[i]);
     }
-    // printf("\n\t");
-    //  for (int i = 0; i < MAXSIZE; i++)
-    //   {
-    //     printf("%c", vector1 [i]);
-    //   }
 }
